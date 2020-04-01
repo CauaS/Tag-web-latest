@@ -16,6 +16,7 @@ export default function FullRequest({ data }){
                 : <div className="full-request">
                     <div className="header-request">
                         <span className="request-number">{data.number}</span>
+                        <span className="request-type-description">{data.type}</span>  
                         <span className="request-type" style={{ background: data.color }}/>
                     </div>
                     <div className="request-content">{data.description}</div>
