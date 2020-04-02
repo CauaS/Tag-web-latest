@@ -46,7 +46,7 @@
     height: 55vh;
     max-height: 49vh;
     max-width: 1200px;
-    -webkit-line-clamp: 17;
+    -webkit-line-clamp: 18;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
