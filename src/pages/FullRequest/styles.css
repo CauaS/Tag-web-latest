@@ -1,7 +1,7 @@
 .animation-full-request {
    margin-top: 10em;
 }
-.search-container main {
+main {
     margin: 20px 15px;
     width: 100%;
     height: 50vh;
@@ -14,23 +14,23 @@
     box-shadow: 0px 0px 23px -12px rgba(0,0,0,0.75);
 }
 
-.search-container main .header-request{
+ main .header-request{
     display: flex;
     justify-content: space-between;
     position: relative;
 }
-.search-container main .request-type{
+ main .request-type{
     width: 25px;
     height: 25px;
     background: green;
     border-radius: 12px;
 }
-.search-container main .request-type-description{
+ main .request-type-description{
     color: #716868;
     font-size: smaller;
 }
 
-.search-container main .request-number {
+ main .request-number {
     border: 1px solid #dcdce6;
     border-radius: 8px;
     padding: 5px;
@@ -39,7 +39,7 @@
     background-color:  #398cb9;
 }
 
-.search-container main .request-content {
+ main .request-content {
     margin-top: 20px;
     width: 100%;
     height: 49vh;
@@ -47,7 +47,7 @@
     color: #716868;
 }
 
-.search-container main .request-tags {
+ main .request-tags {
     margin: 15px 0;
     display: flex;
     flex-wrap: wrap;
@@ -55,7 +55,7 @@
     align-items: center;
     height: 60px;
 }
-.search-container main .request-tags span {
+ main .request-tags span {
     border: 1px solid #398cb9;
     border-radius: 8px;
     margin-right: 5px;    
@@ -63,30 +63,36 @@
     padding: 3px;
     transition: background .6s;
 }
-.search-container main .request-tags span:hover {
+ main .request-tags span:hover {
   background:  #398cb9;
   color: #fff
 }
 
-.search-container main .request-footer {
+ main .request-footer {
     display: flex;
     justify-content: space-between;
     color: #716868;
     font-weight: 700;
 }
 @media(max-width: 978px){
-    .search-container main {
+     main {
         height: 100%;
     } 
 }
 @media(min-height: 1366px){
-    .search-container main .request-content {
+     main .request-content {
         min-height: 63vh;
     }
 }
 @media(max-width: 553px){
-    .search-container main .request-type-description {
-        color: #fff;
-        width: 5px
+     main .request-type-description {
+       display: none;
     }
+}
+
+@media(max-width: 731px){
+    main {
+       margin-left: 16px;
+       
+   }
 }
