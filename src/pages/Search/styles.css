@@ -57,7 +57,6 @@
     overflow: scroll;
     overflow-x: hidden;
 }
-
 .search-container section ul li {
     background: #fff;
     padding: 10px 10px;
@@ -170,7 +169,14 @@
 }
 @media(max-width: 553px){
     .search-container section ul li .request-type-description {
-        color: #fff;
-        width: 5px
+        display: none;
+    }
+}
+
+@media(max-width: 731px){
+    .search-container .container-info {
+        flex-direction: column-reverse;
+        margin-right: 33px;
+        
     }
 }
