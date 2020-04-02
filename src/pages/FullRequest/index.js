@@ -9,7 +9,7 @@ export default function FullRequest({ data }){
     return(
         <main>
             {
-                data.length == 0
+                data.length === 0
                 ? <div className="animation-full-request">
                     <Animated name={empty} width={200} height={200}/>
                   </div>
@@ -22,10 +22,10 @@ export default function FullRequest({ data }){
                     <div className="request-content">{data.description}</div>
                     <div className="request-tags"> 
                         {   
-                            data.length == 0 
+                            data.length === 0 
                             ? <span>#</span>
-                            : data.tags.split(',').map(tag =>(
-                                <span>{tag.trim()}</span>
+                            : data.tags.split(',').map((tag, index) =>(
+                                <span key={index}>{tag.trim()}</span>
                             ))
                         }
                     </div>
