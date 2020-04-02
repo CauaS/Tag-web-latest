@@ -16,13 +16,13 @@ export default function Search() {
   const [request, setRequest] = useState('');
   const [tag, setTag] = useState('');
   const [requests,  setRequests] = useState([]);
-  const [requestPressed,  setRequestPressed] = useState([]);
+  const [requestPressed,  setRequestPressed] = useState([]);  
 
   async function handleRequestTag(){
      if(request === '' && tag !== ''){
       await api.post('tags/in', { tags: tag }).then(response => setRequests(response.data));
     }else if(request !== '' && tag === ''){
-      await api.post('request/number', { number: request }).then(response => setRequests(response.data));
+      await api.post('request/in', { requests: request }).then(response => setRequests(response.data));
     }else if((request && tag ) === ''){
       await api.get('request').then(response => setRequests(response.data));
     }
@@ -34,18 +34,19 @@ export default function Search() {
         <img src={kundenLogo} alt="logo kunden" width="150" height="65"/>        
         <div className="header-searching">          
           <input
+            autoFocus 
             id="inputRequest" 
-            type="number" 
+            type="text" 
             placeholder="Pedido..."
             value={request}
-            onChange={e => setRequest(e.target.value)}
+            onChange={e => { return setRequest(e.target.value), setTag('')}}
           />
           <input
             id="inputTag"  
             type="text" 
             placeholder="Tag..."
             value={tag}
-            onChange={e => setTag(e.target.value)}
+            onChange={e => { return setTag(e.target.value), setRequest('')}}
           />
         </div>
           <div 
@@ -61,9 +62,9 @@ export default function Search() {
           {
             requests.length === 0
             ? <Animated name={empty_li} width={700} height={300}/>
-            :requests.map(item => (
+            :requests.map((item, index) => (
               <li 
-                key={item.id}
+                key={index}
                 onClick={() => setRequestPressed(item)}
               >
                 <div className="header-request">
@@ -74,8 +75,8 @@ export default function Search() {
                 <div className="request-content">{item.description}</div>
                 <div className="request-tags">
                   {
-                    item.tags.split(',').map(tag =>(
-                      <span>{tag.trim()}</span>
+                    item.tags.split(',').map((tag, index) =>(
+                      <span key={index}>{tag.trim()}</span>
                     ))
                   }             
                 </div>
