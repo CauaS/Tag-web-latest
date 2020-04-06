@@ -53,7 +53,7 @@ export default function Search() {
             className="button-search"
             onClick={handleRequestTag}
           >
-            <AiOutlineSearch size={32} color="#000" />
+            <AiOutlineSearch size={28} color="#696969" />
           </div>
       </header>
     <div className="container-info">
