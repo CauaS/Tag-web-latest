@@ -159,9 +159,7 @@
         height: 40px;
         margin-bottom: 3px;
         margin-left: 50px;
-        background: #f0f0f5;
-        box-shadow: inset 3px 3px 5px #96969c, 
-                    inset -5px -5px 10px #ffffff;    
+        background: #fff;   
     }
     .header-search .button-search{
         margin-left: 30px;
