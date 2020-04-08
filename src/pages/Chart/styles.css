@@ -1,0 +1,92 @@
+.container {
+    height: 71.2vh;
+    width: 100%;  
+    overflow: auto;
+}
+
+.container h3 {
+    margin-bottom: 5px;
+}
+
+.container .timeline {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* linha do meio*/
+.container .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background: #398cb9;
+    bottom: 0;
+    top:0;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 8px;
+}
+
+.container .timeline .item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+
+/* bolinha */
+.container .timeline .item::after{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: -11px;
+    background-color: white;
+    border: 4px solid #398cb9;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+.left {
+    left: 0;
+}
+.right {
+    left: 51%;
+}
+
+/* item arrow*/
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 18px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid #f0f0f5;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #f0f0f5;
+  }
+
+  .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 18px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid #f0f0f5;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #f0f0f5 transparent transparent;
+  }
+  .right::after {
+    left: -16px;
+  }
+
+  .content {
+    padding: 10px 10px;
+    background-color: #f0f0f5;
+    position: relative;
+    border-radius: 6px;
+  }
+  
