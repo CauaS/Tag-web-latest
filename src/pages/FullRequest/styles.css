@@ -74,6 +74,14 @@
      color: #716868;
      font-weight: 700;
  }
+ main .request-footer .button-timeline {
+    background:#fff;
+    border: 0;
+    transition: opacity 0.2s
+}
+main .request-footer .button-timeline:hover {
+    opacity: 0.8;
+}
  @media(max-width: 978px){
       main {
          height: 100%;
