@@ -2,6 +2,7 @@
     height: 71.2vh;
     width: 100%;  
     overflow: auto;
+    padding: 10px 0;
 }
 
 .container h3 {
