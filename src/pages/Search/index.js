@@ -61,7 +61,7 @@ export default function Search() {
         <ul>
           {
             requests.length === 0
-            ? <Animated name={empty_li} width={700} height={300}/>
+            ? <Animated name={empty_li} width={'100%'} height={300}/>
             :requests.map((item, index) => (
               <li 
                 key={index}
