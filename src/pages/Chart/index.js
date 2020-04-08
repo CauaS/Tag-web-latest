@@ -13,7 +13,7 @@ export default function ChartRequest(){
                 <div className="item right">
                     <div className="content">
                         <h3>Impedido</h3>
-                        <p>Situação está com o Wagner. Foi explicaod via email.</p>
+                        <p>Situação está com o Wagner. Foi explicado via email.</p>
                     </div>
                 </div>
                 <div className="item left">
