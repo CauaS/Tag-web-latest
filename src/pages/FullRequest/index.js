@@ -1,14 +1,17 @@
 import React, { useState }from 'react';
 import { MdTimeline } from 'react-icons/md';
+import { FaChartPie } from 'react-icons/fa'
 
 import empty from '../../assets/animations/empty.json';
 import Animated from '../Animate/index';
-import ChartRequest from '../Chart/index';
+import ChartRequestTimeLine from '../Chart/TimeLine/index';
+import ChartRequestPie from '../Chart/Pie/index';
 
 import './styles.css';
 
 export default function FullRequest({ data }){
-    const [showHistorical, setShowHistorical ] =  useState(false);
+    const [showHistoricalTL, setShowHistoricalTL ] =  useState(false);
+    const [showHistoricalPie, setShowHistoricalPie ] =  useState(false);
 
     return(
         <main>
@@ -19,8 +22,8 @@ export default function FullRequest({ data }){
                   </div>
                 : <div className="full-request">
                     {
-                        showHistorical
-                        ? <ChartRequest  />
+                        showHistoricalTL || showHistoricalPie
+                        ? showHistoricalTL ? <ChartRequestTimeLine /> : <ChartRequestPie />
                         : <div>
                             <div className="header-request">
                                 <span className="request-number">{data.number}</span>
@@ -45,9 +48,15 @@ export default function FullRequest({ data }){
                         <span>{data.date}</span>
                         <button 
                             className="button-timeline"
-                            onClick={() => setShowHistorical(!showHistorical)}
+                            onClick={() => { return setShowHistoricalTL(!showHistoricalTL), setShowHistoricalPie(false) }}
                         >
                             <MdTimeline size={28} color="#696969" />
+                        </button>
+                        <button 
+                            className="button-timeline"
+                            onClick={() => { return setShowHistoricalPie(!showHistoricalPie), setShowHistoricalTL(false) }}
+                        >
+                            <FaChartPie size={22} color="#696969" />
                         </button>
                     </div>
                 </div>

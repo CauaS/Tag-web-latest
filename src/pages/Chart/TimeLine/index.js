@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 
-export default function ChartRequest(){
+export default function ChartRequestTimeLine(){
     return (
         <div className="container">
            <div className="timeline">
