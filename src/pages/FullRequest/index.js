@@ -1,17 +1,22 @@
 import React, { useState }from 'react';
+
 import { MdTimeline } from 'react-icons/md';
-import { FaChartPie } from 'react-icons/fa'
+import { FaChartPie, FaRegFilePdf, FaFileDownload } from 'react-icons/fa';
+import { PDFDownloadLink } from "@react-pdf/renderer";
+
 
 import empty from '../../assets/animations/empty.json';
 import Animated from '../Animate/index';
 import ChartRequestTimeLine from '../Chart/TimeLine/index';
 import ChartRequestPie from '../Chart/Pie/index';
+import PdfDocument from '../Pdf/index';
 
 import './styles.css';
 
 export default function FullRequest({ data }){
     const [showHistoricalTL, setShowHistoricalTL ] =  useState(false);
     const [showHistoricalPie, setShowHistoricalPie ] =  useState(false);
+    const [showPDF, setShowPDF ] =  useState(false);
 
     return(
         <main>
@@ -56,11 +61,28 @@ export default function FullRequest({ data }){
                             className="button-timeline"
                             onClick={() => { return setShowHistoricalPie(!showHistoricalPie), setShowHistoricalTL(false) }}
                         >
-                            <FaChartPie size={22} color="#696969" />
+                            <FaChartPie size={21} color="#696969" />
+                        </button>
+                        <button 
+                            className="button-timeline"
+                            onClick={() => setShowPDF(!showPDF)}
+                        >
+                        {
+                            showPDF ? (
+                                <PDFDownloadLink
+                                    document={ <PdfDocument data={data}/>}
+                                    fileName={`pedido_${data.number}.pdf`}
+                                >
+                                {({ blob, url, loading, error }) =>
+                                  loading ? "Loading..." : <FaFileDownload size={21} color="#696969" />
+                                }
+                              </PDFDownloadLink>
+                            ) : <FaRegFilePdf size={21} color="#696969" />
+                        }
                         </button>
                     </div>
                 </div>
-            }
+            }            
         </main>
     )
 }
