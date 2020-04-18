@@ -5,7 +5,6 @@
      position: relative;
      margin: 20px 15px;
      width: 100%;
-     height: 50vh;
      min-height: 78vh;
      background: #fff;
      padding: 10px 10px;
@@ -88,25 +87,37 @@
 main .request-footer .button-timeline:hover {
     opacity: 0.8;
 }
- @media(max-width: 978px){
-      main {
-         height: 100%;
-     } 
- }
+
+
+@media (max-width: 414px){
+    main .request-footer {
+        right: 9px;
+    }
+}
+@media(max-width: 553px){
+    main .request-type-description {
+        display: none;
+    }
+    main {
+        min-height: 81vh;
+    }
+}
+@media(max-width: 731px){
+    main {
+        margin-left: 18px;        
+    }
+}
+@media(max-width: 978px){
+    main {
+       height: 100%;
+   }
+   main .request-footer {
+    right: 9px;
+} 
+}
  @media(min-height: 1366px){
       main .request-content {
          min-height: 63vh;
      }
  }
- @media(max-width: 553px){
-      main .request-type-description {
-        display: none;
-     }
- }
  
- @media(max-width: 731px){
-     main {
-        margin-left: 18px;
-        
-    }
- }

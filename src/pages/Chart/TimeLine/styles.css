@@ -91,3 +91,8 @@
     border-radius: 6px;
   }
   
+  @media(max-width: 768px){
+       h3, p {
+        font-size: small;
+      }
+  }
