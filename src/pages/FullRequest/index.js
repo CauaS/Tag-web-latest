@@ -8,7 +8,8 @@ import { PDFDownloadLink } from "@react-pdf/renderer";
 import empty from '../../assets/animations/empty.json';
 import Animated from '../Animate/index';
 import ChartRequestTimeLine from '../Chart/TimeLine/index';
-import ChartRequestPie from '../Chart/Pie/index';
+//import ChartRequestPie from '../Chart/Pie/index';
+import ChartRequestPie from '../Chart/PieChart/index';
 import PdfDocument from '../Pdf/index';
 
 import './styles.css';
