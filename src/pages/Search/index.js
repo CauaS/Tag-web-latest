@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
+import { GoDashboard } from 'react-icons/go';
+
 
 import api from '../../services/api';
 import kundenLogo from '../../assets/img/kundenLogo.png'
@@ -12,13 +15,19 @@ import '../../global.css';
 
 
 export default function Search() {
+   const histoty = useHistory();
 
   const [request, setRequest] = useState('');
   const [tag, setTag] = useState('');
   const [requests,  setRequests] = useState([]);
-  const [requestPressed,  setRequestPressed] = useState([]);  
+  const [requestPressed,  setRequestPressed] = useState([]); 
+  
+  function handleDashboard (){
+    histoty.push('/dashboard')
+  }
 
   async function handleRequestTag(){
+
      if(request === '' && tag !== ''){
       await api.post('tags/in', { tags: tag }).then(response => setRequests(response.data));
     }else if(request !== '' && tag === ''){
@@ -54,7 +63,14 @@ export default function Search() {
             onClick={handleRequestTag}
           >
             <AiOutlineSearch size={28} color="#696969" />
-          </div>
+          </div>          
+          <Link 
+            to='/dashboard'
+            className="button-dashboard"
+            onClick={handleDashboard}
+          >
+            <GoDashboard size={28} color="#696969" />
+          </Link>
       </header>
     <div className="container-info">
       <section className="section-request">
