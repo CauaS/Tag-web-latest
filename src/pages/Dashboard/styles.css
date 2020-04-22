@@ -1,0 +1,47 @@
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-dashboard header img {
+    width: 150px;
+    height:65px;
+}
+.container-dashboard {
+    padding: 20px 20px;
+    height: 100vh;
+}
+
+.container-dashboard h1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;
+    letter-spacing: 3px;
+    color: #797878;
+}
+
+.container-dashboard .line-request-infos {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 414px){
+    .container-dashboard .line-request-infos {
+        flex-direction: column;
+    }
+    .container-dashboard h1 {
+        font-size: 24px;
+        margin-top: 25px;
+    }
+}
+
+
+@media(max-width: 1024px){
+    .container-dashboard .line-request-infos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    } 
+}
