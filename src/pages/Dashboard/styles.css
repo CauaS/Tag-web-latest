@@ -22,13 +22,13 @@ header {
     color: #797878;
 }
 
-.container-dashboard .line-request-infos {
+.container-dashboard .line-infos {
     display: flex;
     justify-content: space-between;
 }
 
 @media (max-width: 414px){
-    .container-dashboard .line-request-infos {
+    .container-dashboard .line-infos {
         flex-direction: column;
     }
     .container-dashboard h1 {
@@ -39,7 +39,7 @@ header {
 
 
 @media(max-width: 1024px){
-    .container-dashboard .line-request-infos {
+    .container-dashboard .line-infos {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
