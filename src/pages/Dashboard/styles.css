@@ -1,3 +1,7 @@
+.container-dashboard {
+    padding: 20px 20px;
+    height: 100vh;    
+}
 header {
     display: flex;
     justify-content: space-between;
@@ -6,10 +10,6 @@ header {
 .container-dashboard header img {
     width: 150px;
     height:65px;
-}
-.container-dashboard {
-    padding: 20px 20px;
-    height: 100vh;
 }
 
 .container-dashboard h1 {
