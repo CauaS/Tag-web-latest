@@ -7,7 +7,7 @@ export default function CardRequestInfo({ type, qtd }) {
     
     return (        
        <div className="card">           
-            <HandleIcon type={type}/>          
+            <HandleIcon type={type} size={38}/>          
             <span className="type">{type.toLowerCase()}</span>
             <span className="record">{qtd}</span>
        </div>
