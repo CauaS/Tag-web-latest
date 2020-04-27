@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css';
 
 import { MdAttachMoney } from 'react-icons/md';
-import { AiFillFileText, AiFillWarning,AiOutlineArrowUp, AiOutlineArrowDown } from 'react-icons/ai';
+import { AiFillFileText, AiFillWarning,AiOutlineArrowUp, AiOutlineArrowDown,AiOutlinePercentage } from 'react-icons/ai';
 import { FaToolbox } from 'react-icons/fa';
 import { BsFillPersonFill, BsClock } from 'react-icons/bs';
 import { FaTag } from 'react-icons/fa';
@@ -14,6 +14,11 @@ export default function handleIcon({type, size }){
                                 <AiFillWarning size={size} color='#fff'/>
                         </div>
                     )
+        case 'FISCAL': return (
+                        <div className="mini-card" style={{background: '#d279d2'}}>
+                                <AiOutlinePercentage size={size} color='#fff'/>
+                        </div>
+                        )
         case 'RECURSOS HUMANOS': return (
                         <div className="mini-card" style={{background: '#BCBCBC'}}>
                                 <BsFillPersonFill size={size} color='#fff'/>
