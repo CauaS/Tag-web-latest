@@ -27,14 +27,14 @@ export default function Dashboard() {
                 <h1>Dashboard</h1>
                 <img src={kundenLogo} alt="kunden logo" />
             </header>
-            <div className="line-infos">
+            <div className="line-infos-request">
                 {
                     data.map(item => (
                         <CardRequestInfo type={item.type} qtd={item.qtd}/>           
                     ))
                 }
             </div>
-            <div className="line-infos">
+            <div className="line-infos-patch">
                 {   
                     dataPatch.map(item => (
                         <CardPatchInfo type={item.type}/>           
