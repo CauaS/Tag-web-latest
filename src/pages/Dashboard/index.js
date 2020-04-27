@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles.css';
 
 import CardRequestInfo from './CardRequestInfo/index';
 import CardPatchInfo from './CardPatchInfo/index';
 
+import api from '../../services/api';
+
 import kundenLogo from '../../assets/img/kundenLogo.png';
 
 export default function Dashboard() {
-    const data = [
-        { type:'ESPECIFICAÇÃO', qtd: 15, },
-        { type:'PROJETO', qtd: 15,},
-        { type:'INFRAESTRUTURA', qtd: 15,},
-        { type:'RECURSOS HUMANOS', qtd: 15, },
-        { type:'ERRO', qtd: 15,  },
-        { type:'ABONADO', qtd: 15, },
-    ];
+    const [data, setData] = useState([]);
+
+    useEffect(()=>{
+        handleRequest();
+    }, [])
+
+    async function handleRequest(){
+        await api.get('dashboard/month').then(response => setData(response.data));
+    }
 
     const dataPatch =[
         { type: 'patch' },
