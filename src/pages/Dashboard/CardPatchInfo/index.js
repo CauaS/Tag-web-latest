@@ -3,12 +3,14 @@ import './styles.css';
 
 import HandleIcon from '../HandleIcons/index';
 
-export default function CardPatchInfo({ type }) {
+export default function CardPatchInfo({ type, qtd }) {
+
+    console.log(type);
     return (        
        <div className="card-patch">       
             <HandleIcon type={type} size={40} /> 
-            <span className="description">Patch atual</span>    
-            <span className="number-patch">213</span>
+            <span className="description">{type}</span>    
+            <span className="number-patch">{qtd}</span>
             <div className="footer-patch">
                 <span className="line"/>    
                 <span className="observation">
