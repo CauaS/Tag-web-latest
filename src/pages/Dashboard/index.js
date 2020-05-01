@@ -10,20 +10,22 @@ import kundenLogo from '../../assets/img/kundenLogo.png';
 
 export default function Dashboard() {
     const [data, setData] = useState([]);
+    const [dataPatch, setDataPatch] = useState([]);
+    const [dataPatchFinal, setDataPatchFinal] = useState([]);
 
     useEffect(()=>{
         handleRequest();
+        handlePatch();
     }, [])
 
     async function handleRequest(){
         await api.get('dashboard/month').then(response => setData(response.data));
     }
+    
+    async function handlePatch(){
+        await api.get('dashboard/patch').then(response => setDataPatch(response.data));
 
-    const dataPatch =[
-        { type: 'patch' },
-        { type: 'up' },
-        { type: 'down' },
-    ]
+    }
     return (
         <div className="container-dashboard">
             <header>
@@ -40,7 +42,7 @@ export default function Dashboard() {
             <div className="line-infos-patch">
                 {   
                     dataPatch.map(item => (
-                        <CardPatchInfo type={item.type}/>           
+                        <CardPatchInfo type={item.type} qtd={item.qtd}/>           
                     ))
                 }
             </div>
