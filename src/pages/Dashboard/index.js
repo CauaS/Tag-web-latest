@@ -42,7 +42,7 @@ export default function Dashboard() {
             <div className="line-infos-patch">
                 {   
                     dataPatch.map(item => (
-                        <CardPatchInfo type={item.type} qtd={item.qtd}/>           
+                        <CardPatchInfo rate={item.rate} qtd={item.qtd} type={item.type}/>           
                     ))
                 }
             </div>
