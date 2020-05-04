@@ -28,8 +28,8 @@
 }
 .card-patch .description {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 60px;
+    right: 100px;
     font-size: 21px;
     line-height: 19px;
     color: #6B6464;
