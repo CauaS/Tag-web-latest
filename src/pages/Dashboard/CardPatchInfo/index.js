@@ -16,7 +16,7 @@ export default function CardPatchInfo({ rate, type, qtd }) {
                 <span className="observation">
                     { rate === 'patch' 
                       ? 'Total de pedidos:' 
-                      : type }: <strong>{qtd}</strong>
+                      : `${type}:` } <strong>{qtd}</strong>
                 </span>
             </div>
        </div>
