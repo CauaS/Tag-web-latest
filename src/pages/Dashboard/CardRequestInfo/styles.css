@@ -35,6 +35,13 @@
     color: #000000;
 }
 
+@media (max-width: 1280px){
+    .card {
+        width:170px;
+        height:130px;        
+        position: relative;
+    }
+}
 
 @media (max-width: 414px){
     .card {

@@ -51,6 +51,7 @@ header {
     .container-dashboard h1 {
         font-size: 24px;
         margin-top: 25px;
+        margin-bottom: 20px;
     }
     .container-dashboard header img {
         width: 140px;

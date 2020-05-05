@@ -74,7 +74,13 @@
 
 }
 
-
+@media (max-width: 1280px){
+    .card-patch {
+        width:32%;
+        height:130px;        
+        position: relative;
+    }
+}
 @media (max-width: 414px){
     .card-patch {
         width:100%;
