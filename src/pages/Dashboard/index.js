@@ -9,9 +9,14 @@ import api from '../../services/api';
 import kundenLogo from '../../assets/img/kundenLogo.png';
 
 export default function Dashboard() {
+    const date = new Date();
+	const DAY = date.getDate() < 10 ? `0${date.getDate()}`: date.getDate() ;
+	const MONTH = date.getMonth()+1 < 10 ? `0${date.getMonth()+1}` : date.getMonth()+1;
+	const PREV_MONTH = date.getMonth() < 10 ? `0${date.getMonth()}` : date.getMonth();
+    const YEAR = date.getFullYear();
+    
     const [data, setData] = useState([]);
     const [dataPatch, setDataPatch] = useState([]);
-    const [dataPatchFinal, setDataPatchFinal] = useState([]);
 
     useEffect(()=>{
         handleRequest();
@@ -32,6 +37,7 @@ export default function Dashboard() {
                 <h1>Dashboard</h1>
                 <img src={kundenLogo} alt="kunden logo" />
             </header>
+            <span className="date-rage">01/{PREV_MONTH}/{YEAR} - {DAY}/{MONTH}/{YEAR}</span>
             <div className="line-infos-request">
                 {
                     data.map(item => (
