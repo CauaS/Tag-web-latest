@@ -1,41 +1,44 @@
-import React from 'react';
+import React,  { useState, useEffect } from 'react';
 import './styles.css';
 
-export default function ChartRequestTimeLine(){
+import api from '../../../services/api';
+
+export default function ChartRequestTimeLine({request}){
+    const [occurrence, setOccurrence] = useState([]);
+
+    useEffect(() => {
+        handleOccurrence();
+    }, []);
+
+    async function handleOccurrence(){
+        await api.post('occurrence/request', { number: request }).then(response => setOccurrence(response.data));
+    }
     return (
         <div className="container">
            <div className="timeline">
-                <div className="item left">
-                    <div className="content">
-                        <h3>Abertura do pedido</h3>
-                    </div>
-                </div>
-                <div className="item right">
-                    <div className="content">
-                        <h3>Impedido</h3>
-                        <p>Situação está com o Wagner. Foi explicado via email.</p>
-                    </div>
-                </div>
-                <div className="item left">
-                    <div className="content">
-                        <h3>Desvalidado Desenvolvimento</h3>
-                    </div>
-                </div>
-                <div className="item right">
-                    <div className="content">
-                        <h3>Validado Desenvolvimento</h3>
-                    </div>
-                </div>
-                <div className="item left">
-                    <div className="content">
-                        <h3>Validado Analista</h3>
-                    </div>
-                </div>
-                <div className="item right">
-                    <div className="content">
-                        <h3>Validado Consultoria</h3>
-                    </div>
-                </div>
+               {
+                    occurrence.map((item, index) => {
+                        return (index%2)
+                            ?  <div className="item left" key={index}>
+                                    <div className="content">
+                                        <h3>{item.event_description}</h3>
+                                        <p>{item.comment}</p>
+                                        <div className="date">
+                                            <span>{item.ocor_date}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            : <div className="item right" key={index}>
+                                    <div className="content">
+                                        <h3>{item.event_description}</h3>
+                                        <p>{item.comment}</p>
+                                        <div className="date">
+                                            <span>{item.ocor_date}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                   })
+               }
             </div>
         </div>
     );
