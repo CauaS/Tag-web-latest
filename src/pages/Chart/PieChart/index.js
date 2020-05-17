@@ -1,15 +1,49 @@
-import React from 'react';
+import React,  { useState, useEffect } from 'react';
 import './styles.css';
+
+import api from '../../../services/api';
 
 import { Doughnut  } from 'react-chartjs-2';
 
-export default function ChartRequestPie(){
+export default function ChartRequestPie({ request }){
+
+  const [occurrence, setOccurrence] = useState([]);
+
+    useEffect(() => {
+        handleOccurrence();
+    }, []);
+
+    async function handleOccurrence(){
+        await api.post('occurrence/request', { number: request }).then(response => setOccurrence(response.data));      
+    }
+
+    const events = occurrence.map(item => item.event_description);
+
+    if(events.length > 0){
+      
+      var counting = events.reduce(function(obj, item) {
+        //if there's no property named == item, so it is created and applied value 1
+        if(!obj[item]){
+          obj[item] = 1
+        }else{
+        // if the property already exist, so it's value is incremented
+          obj[item]++;
+        }
+        
+        return obj;
+
+      }, {});
+      
+      // taking only the property's values
+      var values = Object.values(counting);
+    }
+
     const data = {
-        labels: ['Desvalidado Analista', 'Desvalidado Desenvolvimento', 'Impedimento', 'Desvalidado Consultoria', 'Validado Consultoria'],
+        labels: occurrence.map(item => item.event_description),
         datasets: [
           {
             label: 'Ocorrência do pedido',
-            backgroundColor: ['#FF5733', '#BD391C', '#000000', '#EEBF38', 'rgba(75,192,192,1)'],
+            backgroundColor: ['#FF5733', '#BD391C', '#000000', '#EEBF38', 'rgba(75,192,192,1)','gray'],
             borderColor: 'white',
             borderDash: 10,
             borderCapStyle: 'butt',
@@ -27,7 +61,7 @@ export default function ChartRequestPie(){
             //pointHoverBorderWidth: 2,
             //pointRadius: 1,
             //pointHitRadius: 10,
-            data: [3,3,1,1, 1]
+            data: values
           }
         ]
       };
