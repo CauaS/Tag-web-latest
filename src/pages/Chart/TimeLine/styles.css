@@ -96,3 +96,11 @@
         font-size: small;
       }
   }
+
+  .date{
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+      font-weight: 700;
+      font-size: small;
+  }
