@@ -1,4 +1,4 @@
-import React, { useState }from 'react';
+import React, { useState,l, useEffect }from 'react';
 
 import { MdTimeline } from 'react-icons/md';
 import { FaChartPie, FaRegFilePdf, FaFileDownload } from 'react-icons/fa';
@@ -19,6 +19,12 @@ export default function FullRequest({ data }){
     const [showHistoricalPie, setShowHistoricalPie ] =  useState(false);
     const [showPDF, setShowPDF ] =  useState(false);
 
+    useEffect(()=>{
+        setShowHistoricalTL(false);
+        setShowHistoricalPie(false);
+        setShowPDF(false);
+    }, [data])
+
     return(
         <main>
             {
@@ -29,7 +35,7 @@ export default function FullRequest({ data }){
                 : <div className="full-request">
                     {
                         showHistoricalTL || showHistoricalPie
-                        ? showHistoricalTL ? <ChartRequestTimeLine /> : <ChartRequestPie />
+                        ? showHistoricalTL ? <ChartRequestTimeLine request={data.number} /> : <ChartRequestPie request={data.number} />
                         : <div>
                             <div className="header-request">
                                 <span className="request-number">{data.number}</span>
