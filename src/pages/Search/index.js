@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { GoDashboard } from 'react-icons/go';
+import { FiGrid } from 'react-icons/fi';
 
 
 import api from '../../services/api';
@@ -24,6 +25,9 @@ export default function Search() {
   
   function handleDashboard (){
     histoty.push('/dashboard')
+  }
+  function handleScrum (){
+    histoty.push('/scrum')
   }
 
   async function handleRequestTag(){
@@ -66,10 +70,17 @@ export default function Search() {
           </div>          
           <Link 
             to='/dashboard'
-            className="button-dashboard"
+            className="button-dashboard-scrum"
             onClick={handleDashboard}
           >
             <GoDashboard size={28} color="#696969" />
+          </Link>
+          <Link 
+            to='/scrum'
+            className="button-dashboard-scrum"
+            onClick={handleScrum}
+          >
+            <FiGrid size={28} color="#696969" />
           </Link>
       </header>
     <div className="container-info">
