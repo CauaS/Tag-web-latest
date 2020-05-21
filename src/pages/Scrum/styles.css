@@ -1,0 +1,57 @@
+.container-scrum {
+    padding: 20px 20px;
+    height: 100vh;    
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-scrum header img {
+    width: 150px;
+    height:65px;
+}
+
+.container-scrum h1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;
+    letter-spacing: 3px;
+    color: #797878;
+}
+.container-scrum .container-info-columns {
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.container-scrum .container-info-columns .column {
+    margin: 0 auto;
+}
+
+.container-scrum .container-info-columns .requests {
+    max-height: 80vh;
+    overflow: auto;
+}
+
+.container-scrum .container-info-columns .column-title {
+    height: 30px;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.container-scrum .container-info-columns .column-title span {
+    position: fixed;
+    height: 43px;
+    color: #797878;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+
+}

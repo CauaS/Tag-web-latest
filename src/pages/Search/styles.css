@@ -34,16 +34,16 @@
     transition: opacity .2s;
 }
 
-.header-search .button-dashboard {
+.header-search .button-dashboard-scrum {
     background-color: #ffcc3f;
     padding: 8px;
-    border-radius: 50px;
+    border-radius: 50px;    
     margin-left: 5px;
     box-shadow: 0px 5px 23px -12px rgba(0,0,0,0.75);
     transition: background-color .2s;
     cursor: pointer; 
 }
-.header-search .button-dashboard:hover {
+.header-search .button-dashboard-scrum {
     background-color: #FFC114;
 }
 

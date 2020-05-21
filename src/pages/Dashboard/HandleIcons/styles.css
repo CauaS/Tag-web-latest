@@ -1,7 +1,6 @@
 .mini-card {
     position: absolute;
-    width: 55px;
-    height: 55px;
+    padding: 5px;
     left: 14px;
     top: -40px;
     background: #55C274;
