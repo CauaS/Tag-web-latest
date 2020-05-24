@@ -32,6 +32,10 @@ header {
 }
 
 .container-scrum .container-info-columns .requests {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     max-height: 80vh;
     overflow: auto;
 }
