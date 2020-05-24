@@ -18,18 +18,19 @@ export default function Scrum(){
     }, []);
 
     function handleData(data){
-        const l = data.filter(item => item.event_description.includes('Liberado') || item.event_description.includes('Desvalidado Desenvolvimento'));
-        const vd = data.filter(item => item.event_description.includes('Validado Desenvolvimento') || item.event_description.includes('Desvalidado Analista'));
-        const va = data.filter(item => item.event_description.includes('Validado Analista')||item.event_description.includes('Desvalidado Consultoria'));
-        const ac = data.filter(item => item.event_description === 'Atualizado Cliente');
-        const i = data.filter(item => item.event_description === 'Impedido');
-        
-        setLiberado(l);
-        SetValidadoDesenvolvimento(vd);
-        SetValidadoAnalista(va);
-        SetAtualizadoCliente(ac);
-        SetImpedido(i);
-        
+        if(data.length > 0){
+            const l = data.filter(item => item.event_description.includes('Liberado') || item.event_description.includes('Desvalidado Desenvolvimento'));
+            const vd = data.filter(item => item.event_description.includes('Validado Desenvolvimento') || item.event_description.includes('Desvalidado Analista'));
+            const va = data.filter(item => item.event_description.includes('Validado Analista')||item.event_description.includes('Desvalidado Consultoria'));
+            const ac = data.filter(item => item.event_description === 'Atualizado Cliente');
+            const i = data.filter(item => item.event_description === 'Impedido');
+            
+            setLiberado(l);
+            SetValidadoDesenvolvimento(vd);
+            SetValidadoAnalista(va);
+            SetAtualizadoCliente(ac);
+            SetImpedido(i);
+        }
     }
     return (
         <div className="container-scrum">
