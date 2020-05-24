@@ -20,13 +20,13 @@ export default function handleIcon({type, size, borderRadius }){
                         </div>
                         )
         case 'RECURSOS HUMANOS': return (
-                        <div className="mini-card" style={{background: '#BCBCBC', borderRadius}}>
+                        <div className="mini-card" style={{background: '#BCBCBC', borderRadius }}>
                                 <BsFillPersonFill size={size} color='#fff'/>
                         </div>
                     )
         case 'ESPECIFICAÇÃO': return (
-                        <div className="mini-card" >
-                                <MdAttachMoney size={size} color='#fff' style={{ borderRadius }} />
+                        <div className="mini-card"  style={{ background:'#55C274', borderRadius }} >
+                                <MdAttachMoney size={size} color='#fff'/>
                         </div>
                     )
         case 'ABONADO': return (
