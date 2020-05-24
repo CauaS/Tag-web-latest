@@ -47,7 +47,6 @@ export default function ChartRequestPie({ request }){
             borderColor: 'white',
             borderDash: 10,
             borderCapStyle: 'butt',
-            borderDash: [],
             borderDashOffset: 0.0,
             //borderJoinStyle: 'miter',
             //fill: false,
