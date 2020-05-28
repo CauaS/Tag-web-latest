@@ -27,7 +27,9 @@ export default function Card({ data }){
                 <div className="icons-right">
                     <div className="third-icon">
                         <HandleIcon 
-                            type={item.event_description != 'Liberado' ?'EXCLAMACAO' : null} 
+                            type={item.event_description != 'Liberado' && item.event_description != 'Analisado' 
+                                  ? 'EXCLAMACAO'
+                                  : null} 
                             size={15} 
                             borderRadius={2}
                         />
