@@ -12,6 +12,11 @@ header {
     width: 150px;
     height:65px;
 }
+.container-scrum header .header-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .container-scrum h1 {
     font-family: Roboto;
@@ -21,6 +26,7 @@ header {
     line-height: 35px;
     letter-spacing: 3px;
     color: #797878;
+    margin-left: 10px;
 }
 .container-scrum .container-info-columns {
     margin-top: 5px;
@@ -32,7 +38,7 @@ header {
 }
 
 .container-scrum .container-info-columns .requests {
-    margin: auto;
+    margin: auto 0;
     max-height: 78vh;
     overflow: auto;
 }
