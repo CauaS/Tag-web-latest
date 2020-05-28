@@ -1,11 +1,16 @@
 import React,  { useState, useEffect } from 'react';
 import './styles.css';
 
+import { useHistory, Link } from 'react-router-dom';
+
 import Card from'./Column/index';
 import api from '../../services/api';
 import kundenLogo from '../../assets/img/kundenLogo.png';
+import { MdKeyboardBackspace } from 'react-icons/md'
 
 export default function Scrum(){
+
+    const history = useHistory();
     
     const [liberado, setLiberado] = useState([]);
     const [validadoDesenvolvimento, SetValidadoDesenvolvimento] = useState([]);
@@ -35,7 +40,15 @@ export default function Scrum(){
     return (
         <div className="container-scrum">
             <header>
-                <h1>Scrum</h1>
+                <div className="header-back">
+                <Link 
+                    to='/'
+                    onClick={() => history.push('/')}
+                >
+                    <MdKeyboardBackspace size={36}/>
+                </Link>
+                    <h1>Scrum</h1>
+                </div>
                 <img src={kundenLogo} alt="kunden logo" />
             </header>
             <div className="container-info-columns">
