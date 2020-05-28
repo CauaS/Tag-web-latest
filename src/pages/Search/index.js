@@ -16,7 +16,7 @@ import '../../global.css';
 
 
 export default function Search() {
-   const histoty = useHistory();
+   const history = useHistory();
 
   const [request, setRequest] = useState('');
   const [tag, setTag] = useState('');
@@ -24,10 +24,10 @@ export default function Search() {
   const [requestPressed,  setRequestPressed] = useState([]); 
   
   function handleDashboard (){
-    histoty.push('/dashboard')
+    history.push('/dashboard')
   }
   function handleScrum (){
-    histoty.push('/scrum')
+    history.push('/scrum')
   }
 
   async function handleRequestTag(){
